@@ -12,4 +12,10 @@ import java.util.TreeMap;
 import java.util.Set;
 
 public class Minnerpanel extends JPanel implements KeyListener, Runnable {
+  public static final int PLAYING=0;
+  public static final int DEAD=1;
+  public static final int Won=2;
+  public static final int NEXTLVL=3;
+  public int status;
+  
 }
