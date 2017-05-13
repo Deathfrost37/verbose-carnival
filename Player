@@ -8,11 +8,16 @@ public int direction;
 public boolean wood;
 public boolean stone;
 public boolean steel;
+public int numStone;
+public int numWood;
+
 public int colPosition;
 public int rowPostion;
 
   public Player()
   {
+    numStone=0;
+    numWood=0;
     direction=left;
     stone=false;
     steel=false;
