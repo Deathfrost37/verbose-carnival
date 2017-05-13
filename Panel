@@ -1,0 +1,15 @@
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.TreeMap;
+import java.util.Set;
+
+public class Minnerpanel extends JPanel implements KeyListener, Runnable {
+}
