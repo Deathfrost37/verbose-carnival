@@ -1,1 +1,52 @@
+Pulblic class Player{
 
+public static final int up=0;
+public static final int down=1;
+public static final int left =2;
+public static final int right=3;
+public int direction;
+public boolean wood;
+public boolean stone;
+public boolean steel;
+public int colPosition;
+public int rowPostion;
+
+  public Player()
+  {
+    direction=left;
+    stone=false;
+    steel=false;
+    wood=false;
+  }
+  public int Getdirection()
+  {
+    return direction;
+  }
+  public boolean GetStone()
+  {
+    return stone;
+    }
+   public boolean GetWood()
+   {
+    return wood;
+    }
+  public int GetcolPosition()
+	{ 
+		return colPosition;
+	}
+	public int GetrowPosition()
+	{
+		return rowPosition;
+	}
+  public void setdirection(int direction)
+	{
+		this.direction=direction;
+	}
+  public void setcolPosition( int colPosition)
+	{
+		this.colPosition= colPosition;
+	}
+	public void setrowposition(int rowPosition)
+	{
+		this.rowPosition=rowPosition;
+	}
