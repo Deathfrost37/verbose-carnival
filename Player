@@ -1,9 +1,9 @@
-Pulblic class Player{
+public class Player{
 
-public static final int up=0;
-public static final int down=1;
-public static final int left =2;
-public static final int right=3;
+public static final int UP=0;
+public static final int DOWN=1;
+public static final int LEFT =2;
+public static final int RIGHT=3;
 public int direction;
 public boolean wood;
 public boolean stone;
@@ -23,18 +23,24 @@ public int rowPostion;
     steel=false;
     wood=false;
   }
-  public int Getdirection()
+  public int getDirection()
   {
     return direction;
   }
-  public boolean GetStone()
+  public boolean getStone()
   {
     return stone;
     }
-   public boolean GetWood()
+   public boolean getWood()
    {
     return wood;
     }
+    public boolean getSteel(){
+    return steel;
+	}
+	
+	
+	
   public int GetcolPosition()
 	{ 
 		return colPosition;
