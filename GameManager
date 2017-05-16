@@ -1,0 +1,60 @@
+public class GameManager {
+	
+	/*manages the mechanics of the game and stores the composition of the grid*/
+	
+	public static final int DEFAULT_ROWS = 20;
+	public static final int DEFAULT_COLS = 12;
+	
+	//resource management
+	
+	public static final int WOOD = 1;
+	public static final int STEEL = 2;
+	public static final int STONE = 3;
+	public static final int WALL = 5756;
+	
+	//initial quotas per level to win; perhaps not needed but placed for now
+	public static final int QUOTA_LVL1 = 5;
+	public static final int QUOTA_LVL2 = 8;
+	
+	//Rows, Columns and Map variables
+	public int mapRows, mapCols;
+	static int[][] map;
+	
+	//storage of what level on 
+	public boolean LEVEL_ONE = false;
+	public boolean LEVEL_TWO = false;
+	
+	//too much stuff in this class!
+	static int status 	= -1;
+	public static int PLAYING = 0;
+	public static int WON = 2;
+	public static int LOST = 3;
+	public static int NEW_GAME = 4;
+	
+	
+	
+	public GameManager(int rows, int cols){
+		this.mapRows = rows;
+		this.mapCols = cols;
+		map = new int[mapRows][mapCols];
+		this.status = PLAYING;
+		LEVEL_ONE = true;
+	}
+	
+	public int getMapLoc(int r, int c) {
+		//not error safe. will throw exception
+		if(r<0 || r==mapRows || c<0 || c==mapCols){
+			throw new IndexOutOfBoundsException("Unable to access location at "+r+","+c+"/nSystem exiting due to mechanical failure.");
+		}
+		return map[r][c];
+	}
+	
+	public int getLevel(){
+		//should work successfully?
+		if(LEVEL_ONE && !LEVEL_TWO){
+			return 1;
+		}return 2;
+	}
+	
+
+}
