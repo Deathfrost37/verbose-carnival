@@ -11,11 +11,35 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.Set;
 
-public class Minnerpanel extends JPanel implements KeyListener, Runnable {
-  public static final int PLAYING=0;
-  public static final int DEAD=1;
-  public static final int Won=2;
-  public static final int NEXTLVL=3;
-  public int status;
-  
+public class MinnererPanel extends JPanel implements KeyListener, Runnable {
+
+	GameManager game = new GameManager(GameManager.DEFAULT_ROWS,GameManager.DEFAULT_COLS);
+	
+	public int status;
+
+	public MinnererPanel(int a) {
+		this.status = a;
+			//return;
+	}
+
+	public void run() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void keyPressed(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
 }
