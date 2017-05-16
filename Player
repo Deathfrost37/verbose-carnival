@@ -1,63 +1,75 @@
-public class Player{
 
-public static final int UP=0;
-public static final int DOWN=1;
-public static final int LEFT =2;
-public static final int RIGHT=3;
-public int direction;
-public boolean wood;
-public boolean stone;
-public boolean steel;
-public int numStone;
-public int numWood;
 
-public int colPosition;
-public int rowPostion;
+	public class Player{
 
-  public Player()
-  {
-    numStone=0;
-    numWood=0;
-    direction=left;
-    stone=false;
-    steel=false;
-    wood=false;
-  }
-  public int getDirection()
-  {
-    return direction;
-  }
-  public boolean getStone()
-  {
-    return stone;
-    }
-   public boolean getWood()
-   {
-    return wood;
-    }
-    public boolean getSteel(){
-    return steel;
-	}
-	
-	
-	
-  public int GetcolPosition()
-	{ 
-		return colPosition;
-	}
-	public int GetrowPosition()
-	{
-		return rowPosition;
-	}
-  public void setdirection(int direction)
-	{
-		this.direction=direction;
-	}
-  public void setcolPosition( int colPosition)
-	{
-		this.colPosition= colPosition;
-	}
-	public void setrowposition(int rowPosition)
-	{
-		this.rowPosition=rowPosition;
+		/*
+		 * class that stores data for the player(s?)
+		 */
+		public static final int UP=0;
+		public static final int DOWN=1;
+		public static final int LEFT =2;
+		public static final int RIGHT=3;
+		public int direction;
+		public boolean wood;
+		public boolean stone;
+		public boolean steel;
+		public int numStone;
+		public int numWood;
+
+		public int colPosition;
+		public int rowPosition;
+
+		  public Player()
+		  {
+		    numStone=0;
+		    numWood=0;
+		    direction=LEFT;
+		    stone=false;
+		    steel=false;
+		    wood=false;
+		  }
+		  
+		  //general setters and getters 
+		  
+		  public int getDirection()
+		  {
+		    return direction;
+		  }
+		  
+		  public boolean getStone()
+		  {
+		    return stone;
+		    }
+		  
+		   public boolean getWood()
+		   {
+		    return wood;
+		    }
+		   
+		    public boolean getSteel(){
+		    return steel;
+			}
+			
+			
+			
+		  public int getColPosition()
+			{ 
+				return colPosition;
+			}
+			public int getRowPosition()
+			{
+				return rowPosition;
+			}
+		  public void setDirection(int direction)
+			{
+				this.direction=direction;
+			}
+		  public void setColPosition( int colPosition)
+			{
+				this.colPosition= colPosition;
+			}
+			public void setRowposition(int rowPosition)
+			{
+				this.rowPosition=rowPosition;
+			}
 	}
