@@ -56,5 +56,36 @@ public class GameManager {
 		}return 2;
 	}
 	
+	public boolean hasMovableLeft(int row, int col)
+	{
+	
+	return col-1>=0 && getMapLoc(row,col-1)!= WALL;
+	
+	}
+	
+	public boolean hasMovableRight(int row, int col)
+	{
+	
+		return col+1<map.length && getMapLoc(row,col+1)!= WALL;
+		
+	}
+	
+	public boolean hasMovableUp()
+	{
+	
+		return row-1>=0 && && getMapLoc(row-1,col)!= WALL;
+		
+	}
+	public boolean hasMovableDown(){
+	
+	return row+1<numRows && && getMapLoc(row+1,col)!= WALL;
+	
+	}
+		
+	public void initializeMap(){
+	//possibly necessary to hard code out a couple of levels here
+	}
+
+
 
 }
