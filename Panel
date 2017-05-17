@@ -16,11 +16,20 @@ public class MinnererPanel extends JPanel implements KeyListener, Runnable {
 	GameManager game = new GameManager(GameManager.DEFAULT_ROWS,GameManager.DEFAULT_COLS);
 	
 	public int status;
-
+	TreeMap<String, BufferedImage> images = null;
+	
 	public MinnererPanel(int a) {
 		this.status = a;
-			//return;
+		setSize(500,300);
+		images =new TreeMap<String,BufferedImage>();
+			
 	}
+
+	
+	public void paint(Graphics g){
+	g.setColor(Color.GREY);
+	g.fillRect(0,0,500,300):
+}
 
 	public void run() {
 		// TODO Auto-generated method stub
@@ -42,4 +51,33 @@ public class MinnererPanel extends JPanel implements KeyListener, Runnable {
 
 	}
 
+	public void manageImages()
+	{
+	String[] SNData = inputString.split(",");
+					
+					int columns = Integer.parseInt(SNData[1]);
+					int counter = 0;
+					
+					BufferedImage original = ImageIO.read(new File(SNData[SNData.length-1]));
+				
+					int startingXLocation = 0;
+					int factorOfIncrease = original.getWidth()/columns;
+					
+					while(counter < columns){
+				
+						String nameKey  = SNData[2] + counter;
+						
+						BufferedImage x = original.getSubimage(startingXLocation, 0, (original.getWidth()/columns), (original.getHeight()));
+						
+						//System.out.println(nameKey+ ", "+ x);
+						
+						images.put(nameKey,x);
+						
+						startingXLocation = startingXLocation + factorOfIncrease;
+						
+						counter = counter + 1;
+						
+					}
+}
+	
 }
