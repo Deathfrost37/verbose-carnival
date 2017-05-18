@@ -1,16 +1,15 @@
+import java.io.File;
+
 public class GameManager {
 	
 	/*manages the mechanics of the game and stores the composition of the grid*/
 	
 	public static final int DEFAULT_ROWS = 20;
-	public static final int DEFAULT_COLS = 12;
+	public static final int DEFAULT_COLS = 10;
 	
 	//resource management
 	
-	public static final int WOOD = 1;
-	public static final int STEEL = 2;
-	public static final int STONE = 3;
-	public static final int WALL = 5756;
+	
 	
 	//initial quotas per level to win; perhaps not needed but placed for now
 	public static final int QUOTA_LVL1 = 5;
@@ -18,7 +17,7 @@ public class GameManager {
 	
 	//Rows, Columns and Map variables
 	public int mapRows, mapCols;
-	static int[][] map;
+	static GameBlock[][] map;
 	
 	//storage of what level on 
 	public boolean LEVEL_ONE = false;
@@ -36,12 +35,12 @@ public class GameManager {
 	public GameManager(int rows, int cols){
 		this.mapRows = rows;
 		this.mapCols = cols;
-		map = new int[mapRows][mapCols];
+		map = new GameBlock[mapRows][mapCols];
 		this.status = PLAYING;
 		LEVEL_ONE = true;
 	}
 	
-	public int getMapLoc(int r, int c) {
+	public GameBlock getMapLoc(int r, int c) {
 		//not error safe. will throw exception
 		if(r<0 || r==mapRows || c<0 || c==mapCols){
 			throw new IndexOutOfBoundsException("Unable to access location at "+r+","+c+"/nSystem exiting due to mechanical failure.");
@@ -50,8 +49,8 @@ public class GameManager {
 	}
 	
 	public int getLevel(){
-		//should work successfully?
-		if(LEVEL_ONE && !LEVEL_TWO){
+		
+		if(LEVEL_ONE){
 			return 1;
 		}return 2;
 	}
@@ -59,31 +58,33 @@ public class GameManager {
 	public boolean hasMovableLeft(int row, int col)
 	{
 	
-	return col-1>=0 && getMapLoc(row,col-1)!= WALL;
+	return col-1>=0 && getMapLoc(row,col-1).getType() != GameBlock.WALL;
 	
 	}
 	
 	public boolean hasMovableRight(int row, int col)
 	{
 	
-		return col+1<map.length && getMapLoc(row,col+1)!= WALL;
+		return col+1<mapCols && getMapLoc(row,col+1).getType() != GameBlock.WALL;
 		
 	}
 	
-	public boolean hasMovableUp()
+	public boolean hasMovableUp(int row, int col)
 	{
 	
-		return row-1>=0 && && getMapLoc(row-1,col)!= WALL;
+		return row-1>=0 &&  getMapLoc(row-1,col).getType() != GameBlock.WALL;
 		
 	}
-	public boolean hasMovableDown(){
+	public boolean hasMovableDown(int row, int col){
 	
-	return row+1<numRows && && getMapLoc(row+1,col)!= WALL;
+	return row+1<mapRows && getMapLoc(row+1,col).getType() != GameBlock.WALL;
 	
 	}
 		
-	public void initializeMap(){
+	public void initializeMap(String extension){
 	//possibly necessary to hard code out a couple of levels here
+		
+		
 	}
 
 
