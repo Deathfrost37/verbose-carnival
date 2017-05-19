@@ -20,15 +20,15 @@ public class MinnererPanel extends JPanel implements KeyListener, Runnable {
 	
 	public MinnererPanel(int a) {
 		this.status = a;
-		setSize(500,300);
+		setSize(500,400);
 		images =new TreeMap<String,BufferedImage>();
 			
 	}
 
 	
 	public void paint(Graphics g){
-	g.setColor(Color.GREY);
-	g.fillRect(0,0,500,300):
+	g.setColor(Color.GRAY);
+	g.fillRect(0,0,500,400);
 }
 
 	public void run() {
@@ -51,21 +51,27 @@ public class MinnererPanel extends JPanel implements KeyListener, Runnable {
 
 	}
 
-	public void manageImages()
+	public void manageImages(String extension,int cols,String baseName)
 	{
-	String[] SNData = inputString.split(",");
+
 					
-					int columns = Integer.parseInt(SNData[1]);
+					int columns = cols;
 					int counter = 0;
 					
-					BufferedImage original = ImageIO.read(new File(SNData[SNData.length-1]));
+					BufferedImage original = null;
+					try {
+						original = ImageIO.read(new File(extension));
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				
 					int startingXLocation = 0;
 					int factorOfIncrease = original.getWidth()/columns;
 					
 					while(counter < columns){
 				
-						String nameKey  = SNData[2] + counter;
+						String nameKey  = baseName + counter;
 						
 						BufferedImage x = original.getSubimage(startingXLocation, 0, (original.getWidth()/columns), (original.getHeight()));
 						
